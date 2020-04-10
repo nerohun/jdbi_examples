@@ -47,7 +47,7 @@ public interface UserDao {
 
     //Long insert(User user): az adott felhasználó mentése az adatbázisba, a felhasználó automatikusan generált azonosítóját adja vissza
 
-    @SqlUpdate("INSERT INTO users (username, password, name, email, gender, dob, enabled) VALUES (:username,:password,:name,:email,:gender,:dob, :enabled ) returning id ?")
+    @SqlUpdate("INSERT INTO users (username, password, name, email, gender, dob, enabled) VALUES (:username,:password,:name,:email,:gender,:dob, :enabled )")
     @GetGeneratedKeys
     Long insert(@BindBean User user );
 

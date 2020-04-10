@@ -15,11 +15,7 @@
             <organizationUrl>https://www.inf.unideb.hu/</organizationUrl>
         </developer>
     </developers>
-   <!-- <scm>
-        <url>https://github.com/jeszy75/jdbi-examples</url>
-        <connection>scm:git:https://github.com/jeszy75/jdbi-examples.git</connection>
-        <developerConnection>scm:git:https://github.com/jeszy75/jdbi-examples.git</developerConnection>
-    </scm> -->
+
     <properties>
         <maven.compiler.source>13</maven.compiler.source>
         <maven.compiler.target>13</maven.compiler.target>
