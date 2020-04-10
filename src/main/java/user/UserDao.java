@@ -3,7 +3,6 @@ package user;
 
 
 
-import com.sun.source.tree.Scope;
 import ex8.YearArgumentFactory;
 import ex8.YearColumnMapper;
 import org.jdbi.v3.sqlobject.config.RegisterArgumentFactory;
@@ -12,14 +11,11 @@ import org.jdbi.v3.sqlobject.config.RegisterColumnMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
-import org.jdbi.v3.sqlobject.statement.SqlCall;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.w3c.dom.ls.LSOutput;
 
 
-import java.time.LocalDate;
-import java.time.Year;
 import java.util.List;
 import java.util.Optional;
 
@@ -68,7 +64,7 @@ public interface UserDao {
     //List<User> list(): az összes felhasználó betöltése az adatbázisból
     @SqlQuery("SELECT * FROM users ORDER BY id")
     @RegisterBeanMapper(User.class)
-    List<User> listUsers();
+    List<User> list();
 
 
 }

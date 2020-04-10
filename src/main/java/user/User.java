@@ -1,7 +1,6 @@
 package user;
 
 import java.time.LocalDate;
-import java.time.Year;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

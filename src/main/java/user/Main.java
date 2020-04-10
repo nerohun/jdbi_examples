@@ -1,15 +1,10 @@
 package user;
 
-import ex9.LegoSetDao;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 
-import java.lang.reflect.Proxy;
 import java.time.LocalDate;
-import java.time.Month;
-import java.time.Year;
-import java.util.Random;
 
 public class Main
 {
@@ -25,9 +20,9 @@ public class Main
             dao.createTable();
 
            User user= User.builder()
-                   .username("James")
+                   .username("007")
                    .password("spy")
-                   .name("007")
+                   .name("James Bond")
                    .email("kem@kedek.hu")
                    .gender(User.Gender.MALE)
                    .dob(LocalDate.parse("1978-05-06"))
@@ -35,24 +30,24 @@ public class Main
                    .build();
             dao.insert(user);
             User user1 = User.builder()
-                    .username("Kati")
-                    .password("konyhas")
-                    .name("XXL")
-                    .email("fouz@kedek.hu")
+                    .username("Konyhásnéni")
+                    .password("fozes")
+                    .name("Konyhás Kati")
+                    .email("foz@elek.hu")
                     .gender(User.Gender.FEMALE)
                     .dob(LocalDate.parse("1987-12-30"))
                     .enabled(false)
                     .build();
             dao.insert(user1);
 
-            dao.listUsers().stream().forEach(System.out::println);
+            dao.list().stream().forEach(System.out::println);
             System.out.println("getUserbyName:");
-            dao.findByUsername("James").stream().forEach(System.out::println);
+            dao.findByUsername("007").stream().forEach(System.out::println);
             System.out.println("getUserbyID:");
             dao.findById(2).stream().forEach(System.out::println);
             System.out.println("deleteUser:");
             dao.deleteUser(user);
-            dao.listUsers().stream().forEach(System.out::println);
+            dao.list().stream().forEach(System.out::println);
 
         }
     }
